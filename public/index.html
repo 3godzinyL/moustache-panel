@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moustache Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="panel">
+        <header>
+            <img src="../png.png" alt="logo" class="logo">
+            <h1>Panel</h1>
+        </header>
+
+        <main>
+            <!-- CPU Section -->
+            <section id="cpu-section" class="category">
+                <div class="title">
+                    <i class="fas fa-microchip"></i>
+                    <h2>CPU</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Usage</span>
+                        <div class="value-container">
+                            <span id="cpu-usage" class="value">--%</span>
+                            <div class="usage-bar-bg"><div id="cpu-usage-bar" class="usage-bar"></div></div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Temp</span>
+                        <div class="value-container">
+                            <span id="cpu-temp" class="value">--°C</span>
+                            <i class="fas fa-fan temp-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-list" id="cpu-processes">
+                    <!-- Processes will be injected here -->
+                </div>
+            </section>
+
+            <!-- GPU Section -->
+            <section id="gpu-section" class="category">
+                <div class="title">
+                    <i class="fas fa-gamepad"></i>
+                    <h2>GPU</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Usage</span>
+                        <div class="value-container">
+                            <span id="gpu-usage" class="value">--%</span>
+                             <div class="usage-bar-bg"><div id="gpu-usage-bar" class="usage-bar"></div></div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">VRAM</span>
+                        <div class="value-container">
+                            <span id="gpu-vram" class="value">--%</span>
+                            <div class="usage-bar-bg"><div id="gpu-vram-bar" class="usage-bar"></div></div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="process-list" id="gpu-processes">
+                    <!-- Processes will be injected here -->
+                </div>
+            </section>
+
+            <!-- RAM Section -->
+            <section id="ram-section" class="category">
+                <div class="title">
+                    <i class="fas fa-memory"></i>
+                    <h2>RAM</h2>
+                </div>
+                <div class="info-grid single">
+                    <div class="info-item">
+                        <span class="label">Usage</span>
+                        <div class="value-container">
+                            <span id="ram-usage" class="value">--%</span>
+                            <div class="usage-bar-bg"><div id="ram-usage-bar" class="usage-bar"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-list" id="ram-processes">
+                    <!-- Processes will be injected here -->
+                </div>
+            </section>
+
+            <!-- Disk Section -->
+            <section id="disk-section" class="category">
+                <div class="title">
+                    <i class="fas fa-hdd"></i>
+                    <h2>Disk</h2>
+                </div>
+                 <div class="info-grid single">
+                    <div class="info-item">
+                        <span class="label">Usage</span>
+                        <div class="value-container">
+                            <span id="disk-usage" class="value">--%</span>
+                            <div class="usage-bar-bg"><div id="disk-usage-bar" class="usage-bar"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-list" id="disk-processes">
+                    <!-- Processes will be injected here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

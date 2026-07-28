@@ -1,0 +1,98 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Moustache Control Center",
+  "version": "2.0.0",
+  "identifier": "pl.threehours.moustache",
+  "build": {
+    "beforeDevCommand": "npm run frontend:dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run frontend:build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Moustache Control Center",
+        "width": 1180,
+        "height": 760,
+        "minWidth": 900,
+        "minHeight": 650,
+        "center": true,
+        "decorations": false,
+        "transparent": false,
+        "resizable": true,
+        "visible": true
+      },
+      {
+        "label": "performance",
+        "title": "Wydajność",
+        "width": 430,
+        "height": 520,
+        "decorations": false,
+        "transparent": true,
+        "resizable": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": false,
+        "shadow": false
+      },
+      {
+        "label": "mixer",
+        "title": "Mikser dźwięku",
+        "width": 480,
+        "height": 520,
+        "decorations": false,
+        "transparent": true,
+        "resizable": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": false,
+        "shadow": false
+      },
+      {
+        "label": "notifications",
+        "title": "Powiadomienia",
+        "width": 410,
+        "height": 540,
+        "decorations": false,
+        "transparent": true,
+        "resizable": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": false,
+        "shadow": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' asset: data:; style-src 'self' 'unsafe-inline'; connect-src ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["msi", "nsis"],
+    "publisher": "3godziny",
+    "category": "Utility",
+    "shortDescription": "Performance, audio and notification overlays for Windows.",
+    "longDescription": "A lightweight Windows control center with configurable performance, audio mixer and notification overlays.",
+    "resources": [
+      "resources/moustache_native.dll"
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+      "nsis": {
+        "installMode": "currentUser",
+        "displayLanguageSelector": false
+      }
+    }
+  }
+}
